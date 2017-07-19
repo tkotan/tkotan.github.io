@@ -10,6 +10,7 @@ body {
   width: 800px;
   height: 500px;
   margin: 0 auto;
+  padding-top: 30px;
   display: flex;
   /*flex-wrap: wrap;*/
 }
@@ -40,18 +41,55 @@ body {
   background: rgba(246, 48, 10, 0.5);
 }
 
+.rock:hover {
+  opacity: 0.8;
+}
+
 .paper {
   background: rgba(246, 239, 42, 0.5);
+}
+
+.paper:hover {
+  opacity: 0.8;
 }
 
 .scissors {
   background: rgba(209, 27, 126, 0.5);
 }
 
+.scissors:hover {
+  opacity: 0.8;
+}
+
 .lizard {
   background: rgba(10, 98, 218, 0.5);
 }
 
+.lizard:hover {
+  opacity: 0.8;
+}
+
 .spock {
   background: rgba(0, 192, 0, 0.5);
+}
+
+.spock:hover {
+  opacity: 0.8;
+}
+
+#rules {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
+#rules > * {
+  display: none;
+}
+
+#rules:hover > * {
+  display: block;
 }
