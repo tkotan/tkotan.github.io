@@ -1,0 +1,57 @@
+/** {
+  border: 1px solid blue;
+}*/
+
+body {
+  background: azure;
+}
+
+#container {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  /*flex-wrap: wrap;*/
+}
+
+#choice {
+  width:20%;
+  height: 100%;
+  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 32px;
+
+
+}
+
+#play-the-game {
+  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 24px;
+}
+
+
+#choice-pic {
+  width: 150px;
+  height: 150px;
+}
+
+.rock {
+  background: rgba(246, 48, 10, 0.5);
+}
+
+.paper {
+  background: rgba(246, 239, 42, 0.5);
+}
+
+.scissors {
+  background: rgba(209, 27, 126, 0.5);
+}
+
+.lizard {
+  background: rgba(10, 98, 218, 0.5);
+}
+
+.spock {
+  background: rgba(0, 192, 0, 0.5);
+}
