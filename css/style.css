@@ -164,12 +164,22 @@ h3 {
   weight:150px;
 }
 
+#player-score > div {
+  height: 150px;
+  weight:150px;
+}
+
 #computer-stats {
   text-align: center;
   border-left: 1px solid black;
 }
 
 #computer-hand > img {
+  height: 150px;
+  weight:150px;
+}
+
+#computer-score > div {
   height: 150px;
   weight:150px;
 }
@@ -183,4 +193,26 @@ h3 {
   font-size: 18px;
   border-radius: 10px;
   visibility: hidden;
+}
+
+#final-player-wins {
+  background: rgba(246, 239, 42, 0.9);
+}
+
+#computer-reaction > img {
+  width: 250px;
+}
+
+#player-reaction > img {
+  width: 250px;
+  
+}
+
+#play-again {
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+#player-wins-game {
+  font-size: 3em;
 }
