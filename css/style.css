@@ -15,7 +15,7 @@ h1 {
   width: 800px;
   height: 500px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 80px;
   display: flex;
   /*flex-wrap: wrap;*/
 }
@@ -205,7 +205,6 @@ h3 {
 
 #player-reaction > img {
   width: 250px;
-  
 }
 
 #play-again {
@@ -215,4 +214,28 @@ h3 {
 
 #player-wins-game {
   font-size: 3em;
+}
+
+#baby-text {
+  font-size: 16px;
+}
+
+#final-computer-wins {
+  background: rgba(209, 27, 126, 0.9);
+}
+
+#final-tie-game {
+  background: rgba(10, 98, 218, 0.9);
+}
+
+#final-container {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  padding-top: 80px;
+  text-align: center;
+}
+#final-container > img{
+  height:500px;
+  width:500px;
 }
