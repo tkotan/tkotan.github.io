@@ -70,15 +70,16 @@ let computerWinsGame = false;
 let playerWinsGame = false; //no one has won or lost yet
 let roundTie = false;
 let gameTie = false; //no one has a tie game yet
-
+setTimeout (() => {
+  alert("Candie has made her choice. Click OK to continue.");
+}, 4000);
 //
 // //objects
 //
 //
 //
-const getPlayerChoice = (playerChoice) => {
-  alert("getting player choice " + playerChoice);
-}
+
+
 // //functions
   const reset = () => {
     round = 1; //round number
@@ -90,14 +91,15 @@ const getPlayerChoice = (playerChoice) => {
     playerWinsGame = false; //no one has won or lost yet
     roundTie = false;
     gameTie = false; //no one has a tie game yet
-    getPlayerChoice("spock");
+    setTimeout();
   }
+
+  const getPlayerChoice = (playerChoice) => {
+    alert("getting player choice " + playerChoice);
 
 
 //     //candie is thinking
-//   setTimeout (() => {
-//     alert("Candie has made her choice. Click to continue.");
-//   }, 4500);
+
 //
 //
 //
@@ -235,5 +237,5 @@ const getPlayerChoice = (playerChoice) => {
 //   window.location.href = "http://tkotan.github.io/index.html";
 // }
 reset();
-
+}
 });
