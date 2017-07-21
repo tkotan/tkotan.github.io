@@ -76,6 +76,9 @@ let gameTie = false; //no one has a tie game yet
 //
 //
 //
+const getPlayerChoice = (playerChoice) => {
+  alert("getting player choice " + playerChoice);
+}
 // //functions
   const reset = () => {
     round = 1; //round number
@@ -87,8 +90,10 @@ let gameTie = false; //no one has a tie game yet
     playerWinsGame = false; //no one has won or lost yet
     roundTie = false;
     gameTie = false; //no one has a tie game yet
-    alert("resetting");
+    getPlayerChoice("spock");
   }
+
+
 //     //candie is thinking
 //   setTimeout (() => {
 //     alert("Candie has made her choice. Click to continue.");
