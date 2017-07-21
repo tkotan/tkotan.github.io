@@ -1,6 +1,6 @@
 $(() => {
-	$
-  console.log("What's up?");
+
+
 // // Main game
 // // 1. The player accesses the home page.
 //       // - all scores must be set to zero as soon as a player lands on this page. const score = 0;
@@ -55,31 +55,30 @@ $(() => {
 // //         1. Tie game screen pops up.
 // //         2. If player chooses to play again, he is sent to the home page.
 //
-// //variables
+//variables
 const rpsls = ["rock","paper","scissors","lizard","spock"]; //game choices
 let round = 1; //round number
 let computerScore = 0;
 let finalComputerScore = computerScore;
 let playerScore = 0;
 let finalPlayerScore = playerScore; //the final player score is the sum of the player scores.
-let computerHand = rpsls[Math.floor(rpsls.length * Math.random())];
-let playerHand; //the player's choice
+
+let computerHand = "paper";
+let playerHand = "scissors"; //the player's choice
 let computerWinsRound = false;
 let playerWinsRound = false;
 let computerWinsGame = false;
 let playerWinsGame = false; //no one has won or lost yet
 let roundTie = false;
 let gameTie = false; //no one has a tie game yet
-setTimeout (() => {
-  alert("Candie has made her choice. Click OK to continue.");
-}, 4000);
-//
-// //objects
-//
-//
-//
 
-
+// //
+// // //objects
+// //
+// //
+// //
+//
+//
 // //functions
   const reset = () => {
     round = 1; //round number
@@ -91,50 +90,69 @@ setTimeout (() => {
     playerWinsGame = false; //no one has won or lost yet
     roundTie = false;
     gameTie = false; //no one has a tie game yet
-    setTimeout();
+    // playerWinsRound("scissors", "paper");
   }
 
-  const getPlayerChoice = (playerChoice) => {
-    alert("getting player choice " + playerChoice);
+
+//
+// //     //candie is thinking
+//   setTimeout (() => {
+//     alert("Candie has made her choice. Click OK to continue.");
+//   }, 4000);
+//
+  playerWinsRound = (playerHand,computerHand) => {
+    if (playerHand === "scissors" && computerHand === "paper"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "paper" && computerHand === "rock") {
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "rock" && computerHand === "lizard"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "lizard" && computerHand === "spock"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "spock" && computerHand === "scissors"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "scissors" && computerHand === "lizard"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "lizard" && computerHand === "paper"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "paper" && computerHand === "spock"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "spock" && computerHand === "rock"){
+      playerWinsRound = true;
+      playerScore++;
+    } else if (playerHand === "rock" && computerHand === "scissors"){
+      playerWinsRound = true;
+      playerScore++;
+    }
+  }
 
 
-//     //candie is thinking
+//event handlers
+
+//event listeners
+$(".choice").on('click', (e) => {
+  let playerHand = e.currentTarget.id;
+  let computerHand = rpsls[Math.floor(rpsls.length * Math.random())];
+  console.log(playerHand + ":" + computerHand);
+  playerWinsRound(playerHand,computerHand);
+});
+
+
+
 
 //
 //
 //
 // //player wins round
-// if (playerHand === scissors && computerHand === paper){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === paper && computerHand === rock) {
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === rock && computerHand === lizard){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === lizard && computerHand === spock){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === spock && computerHand === scissors){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === scissors && computerHand === lizard){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === lizard && computerHand === paper){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === paper && computerHand === spock){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === spock && computerHand === rock){
-//   playerWinsRound = true;
-//   playerScore++;
-// } else if (playerHand === rock && computerHand === scissors){
-//   playerWinsRound = true;
-//   playerScore++;
-// }
+
 //
 // //================================
 //
@@ -237,5 +255,5 @@ setTimeout (() => {
 //   window.location.href = "http://tkotan.github.io/index.html";
 // }
 reset();
-}
+
 });

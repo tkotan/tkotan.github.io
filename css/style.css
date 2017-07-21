@@ -20,7 +20,7 @@ h1 {
   /*flex-wrap: wrap;*/
 }
 
-#choice {
+.choice {
   width:20%;
   height: 100%;
   text-align: center;
@@ -44,48 +44,48 @@ p + img {
   height: 150px;
 }
 
-.rock {
+#rock {
   background: rgba(246, 48, 10, 0.5);
   font-weight: bolder;
 }
 
-.rock:hover {
+#rock:hover {
   opacity: 0.8;
 }
 
-.paper {
+#paper {
   background: rgba(246, 239, 42, 0.5);
   font-weight: bolder;
 }
 
-.paper:hover {
+#paper:hover {
   opacity: 0.8;
 }
 
-.scissors {
+#scissors {
   background: rgba(209, 27, 126, 0.5);
   font-weight: bolder;
 }
 
-.scissors:hover {
+#scissors:hover {
   opacity: 0.8;
 }
 
-.lizard {
+#lizard {
   background: rgba(10, 98, 218, 0.5);
   font-weight: bolder;
 }
 
-.lizard:hover {
+#lizard:hover {
   opacity: 0.8;
 }
 
-.spock {
+#spock {
   background: rgba(0, 192, 0, 0.5);
   font-weight: bolder;
 }
 
-.spock:hover {
+#spock:hover {
   opacity: 0.8;
 }
 
