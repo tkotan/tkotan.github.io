@@ -60,9 +60,9 @@ $(() => {
 const rpsls = [rock,paper,scissor,lizard,spock]; //game choices
 let round = 1; //round number
 let computerScore = 0;
-let finalComputerScore = 0;
+let finalComputerScore = computerScore;
 let playerScore = 0;
-let finalPlayerScore = 0;
+let finalPlayerScore = playerScore; //the final player score is the sum of the player scores.
 let playerHand; //the player's choice
 let computerWinsRound = false;
 let playerWinsRound = false;
@@ -79,7 +79,7 @@ computer = {
 const eventHandlers = {
 //player clicks to choose position
 
-//on click
+//if player clicks quit
 }
 
 const UI = {
@@ -176,4 +176,36 @@ if (playerScore === rock && computerScore === rock){
 }
 
 //==============================
-// At round 3, finalcomputerscore = sum of computerScore
+
+//player wins game under the following conditions
+if (finalPlayerScore === 1 && finalComputerScore === 0){
+  playerWinsGame = true;
+} else if (finalPlayerScore === 2 && finalComputerScore === 0 || finalComputerScore === 1){
+  playerWinsGame = true;
+} else if (finalPlayerScore === 3 && finalComputerScore === 0 || finalComputerScore === 1 || finalComputerScore === 2){
+  playerWinsGame = true;
+}
+
+//==================================
+
+//computer wins game under the following conditions
+if (finalComputerScore === 1 && finalPlayerScore === 0){
+  computerWinsGame = true;
+} else if (finalComputerScore === 2 && finalPlayerScore === 0 || finalPlayerScore === 1){
+  computerWinsGame = true;
+} else if (finalComputerScore === 3 && finalPlayerScore === 0 || finalPlayerScore === 1 || finalPlayerScore === 2){
+  computerWinsGame = true;
+}
+
+//====================================
+
+//game is tied under the following conditions
+if (finalPlayerScore === 0 && finalComputerScore === 0){
+  gameTie = true;
+} else if (finalPlayerScore === 1 && finalComputerScore === 1){
+  gameTie = true;
+} else if (finalPlayerScore === 2 && finalComputerScore === 2){
+  gameTie = true;
+} else if (finalPlayerScore === 3 && finalComputerScore === 3){
+  gameTie = true;
+}
