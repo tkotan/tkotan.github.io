@@ -16,9 +16,7 @@ let playerWinsGame = false; //no one has won or lost yet
 let roundTie = false;
 let gameTie = false; //no one has a tie game yet
 //
-// setTimeout (() => {
-//    confirm("Candie the Computer has made her choice.  Are you ready for the results?");
-// }, 1000);
+
 
 // setTimeout(() => {
 //   ($('#computer-message').dialog());
@@ -45,10 +43,10 @@ let gameTie = false; //no one has a tie game yet
 //event listeners
 const playersChoose =
 $(".choice").on('click', (e) => {
+  if(round < 4 ){
     let playerHand = e.currentTarget.id;
     let computerHand = rpsls[Math.floor(rpsls.length * Math.random())];
     console.log("Round " + round + ":" + playerHand + ":" + computerHand);
-    if(round < 4 ){
       determineWhoWinsRound(playerHand, computerHand);
       round++;
     } else {
@@ -57,6 +55,11 @@ $(".choice").on('click', (e) => {
 });
 
 //https://stackoverflow.com/questions/4944387/go-to-link-on-button-click-jquery
+
+$("#another-round").on('click', (e) => {
+  // window.open("http://tkotan.github.io/index.html")
+  window.open("../index.html")
+});
 
 const determineWhoWinsRound = (playerHand,computerHand) => {
   if (playerHand === computerHand) {
@@ -106,10 +109,11 @@ const determineWhoWinsRound = (playerHand,computerHand) => {
   }
 
   console.log( "Player Score: " + playerScore + " versus Computer Score: " + computerScore);
+  // window.open("http://tkotan.github.io/html/lets-play.html");
+  window.open("html/lets-play.html")
+
 };
 
-
-//
 // //game is done under the following conditions - keep
 const determineWhoWinsGame = () => {
   if (finalPlayerScore === finalComputerScore && finalPlayerScore != 0) {
@@ -117,10 +121,10 @@ const determineWhoWinsGame = () => {
     console.log("No Winner!  Game is tied.");
   } else if (finalPlayerScore > finalComputerScore) {
     playerWinsGame = true;
-    console.log("Player Wins " + playerScore + " to " + computerScore);
+    console.log("Player Wins: " + playerScore + " to " + computerScore + "!");
   } else if (finalComputerScore > finalPlayerScore) {
     computerWinsGame = true;
-    console.log("Computer Wins " + computerScore + " to " + playerScore );
+    console.log("Computer Wins: " + computerScore + " to " + playerScore +"!" );
   } else {
     alert("Winner Results!");
   }

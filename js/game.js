@@ -3,6 +3,8 @@ $(() => {
 
 
   const start = () => {
-    alert("game is starting");
+    $('#round-number').html("<h1>Round" + round + "</h1>" )
+
   }
+  start();
 });
