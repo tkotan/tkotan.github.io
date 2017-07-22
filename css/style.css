@@ -39,7 +39,7 @@ p + img {
 }
 
 
-#choice-pic {
+.choice-pic {
   width: 150px;
   height: 150px;
 }
@@ -116,7 +116,7 @@ li {
 }
 
 #comp-thinking {
-  font-size: 4em;
+  font-size: 5em;
   text-align: center;
   display: flex;
 }
