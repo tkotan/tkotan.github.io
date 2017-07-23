@@ -1,12 +1,18 @@
 $(() => {
 
+  $('#lets-play').hide();
+  $('#results-div').hide();
+  $('#another-round').hide();
+  $('#final-results').hide();
+  $('#play-again').hide();
+
 //variables
 const rpsls = ["rock","paper","scissors","lizard","spock"]; //game choices
 let round = 1; //round number
 let computerScore = 0;
-let finalComputerScore = computerScore;
+// let finalComputerScore = computerScore;
 let playerScore = 0;
-let finalPlayerScore = playerScore; //the final player score is the sum of the player scores.
+// let finalPlayerScore = playerScore; //the final player score is the sum of the player scores.
 let computerHand;
 let playerHand; //the player's choice
 let computerWinsRound = false;
@@ -15,16 +21,6 @@ let computerWinsGame = false;
 let playerWinsGame = false; //no one has won or lost yet
 let roundTie = false;
 let gameTie = false; //no one has a tie game yet
-//
-
-
-// setTimeout(() => {
-//   ($('#computer-message').dialog());
-// }, 3000);
-
-// const computerThinks = $(e.currentTarget).on('click',(e) => {
-//         $('computer-message').dialog();
-//     });
 
 
   const reset = () => {
@@ -37,29 +33,55 @@ let gameTie = false; //no one has a tie game yet
     playerWinsGame = false; //no one has won or lost yet
     roundTie = false;
     gameTie = false; //no one has a tie game yet
+    $('#lets-play').hide();
+    $('#results-div').hide();
+    $('#another-round').hide();
+    $('#final-results').hide();
+
   }
 
 
+  $('#another-round').on('click', ()=>{
+  $('#container').show();
+  $('#lets-play').hide();
+  $('#another-round').hide();
+  $('#play-again').hide();
+
+});
+
+$('#final-results').on('click', () =>{
+    determineWhoWinsGame();
+});
+
+$('#play-again').on('click', ()=>{
+  $('#lets-play').hide();
+  $('#results-div').hide();
+  $('#another-round').hide();
+  $('#final-results').hide();
+  $('#play-again').hide();
+
+  reset();
+});
+
 //event listeners
 const playersChoose =
-$(".choice").on('click', (e) => {
+$('.choice').on('click', (e) => {
   if(round < 4 ){
     let playerHand = e.currentTarget.id;
     let computerHand = rpsls[Math.floor(rpsls.length * Math.random())];
     console.log("Round " + round + ":" + playerHand + ":" + computerHand);
       determineWhoWinsRound(playerHand, computerHand);
       round++;
-    } else {
-      determineWhoWinsGame();
+
+      if(round > 3 ){
+        $('#final-results').show();
+        $('#play-again').show();
+        $('#another-round').hide();
+      }
     }
 });
 
 //https://stackoverflow.com/questions/4944387/go-to-link-on-button-click-jquery
-
-$("#another-round").on('click', (e) => {
-  // window.open("http://tkotan.github.io/index.html")
-  window.open("../index.html")
-});
 
 const determineWhoWinsRound = (playerHand,computerHand) => {
   if (playerHand === computerHand) {
@@ -107,13 +129,25 @@ const determineWhoWinsRound = (playerHand,computerHand) => {
   } else {
 
   }
+    $('#container').hide();
+    $('#play-the-game').hide();
+    $('#lets-play').show();
+    $('#another-round').show();
 
-  console.log( "Player Score: " + playerScore + " versus Computer Score: " + computerScore);
-  // window.open("http://tkotan.github.io/html/lets-play.html");
-  window.open("html/lets-play.html")
+    $('#round').html("<h1> Round " + round + "</h1>");
+    $('#player-hand').html("<img src='images/" + playerHand + ".png'>");
+    $("#player-score").html("<h2>" + playerScore + "</h2>");
+    $("#computer-hand").html("<img src='images/" + computerHand + ".png'>");
+    $("#computer-score").html("<h2>" + computerScore + "</h2>");
 
-};
+    console.log( "Player Score: " + playerScore + " vs Computer Score: " + computerScore);
+  };
 
+
+
+
+
+//
 // //game is done under the following conditions - keep
 const determineWhoWinsGame = () => {
   if (finalPlayerScore === finalComputerScore && finalPlayerScore != 0) {
@@ -121,14 +155,15 @@ const determineWhoWinsGame = () => {
     console.log("No Winner!  Game is tied.");
   } else if (finalPlayerScore > finalComputerScore) {
     playerWinsGame = true;
-    console.log("Player Wins: " + playerScore + " to " + computerScore + "!");
+    console.log("Player Wins " + playerScore + " to " + computerScore);
   } else if (finalComputerScore > finalPlayerScore) {
     computerWinsGame = true;
-    console.log("Computer Wins: " + computerScore + " to " + playerScore +"!" );
+    console.log("Computer Wins " + computerScore + " to " + playerScore );
   } else {
     alert("Winner Results!");
   }
 
+  $('#results-div').show();
 
 };
 

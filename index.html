@@ -14,6 +14,30 @@
 
   </head>
   <body>
+    <div id="results-div">
+      <table id="results">
+        <th>
+          <td>Players</td>
+          <td>Round 1</td>
+          <td>Round 2</td>
+          <td>Round 3</td>
+        </th>
+        <tr>
+          <td>Players</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Candie</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+      </table>
+    </div>
+
+
       <div id="container">
         <div class="choice" id="rock" data="rock">
           <p>Rock</p>
@@ -54,35 +78,34 @@
             </ul>
         </a>
       </div>
-      <div id="game-board">
-        <body id="lets-play">
-          <h1 id="round-number">Round 1</h1>
-          <div id="container">
 
-            <section id="player-stats">
 
-              <h3>You</h3>
-              <div id="player-hand"></div>
-              <div id="player-score"></div>
+<div id="lets-play">
+  <h1 id="roundHeader"> Round 1</h1>
+      <div id="container">
+        <section id="player-stats">
+          <h3>You</h3>
 
-            </section>
-            <section id="game-stats">
-              <p id="round-decision"></p>
+          <div id="player-hand"></div>
+          <div id="player-score"></div>
 
-              <button id="another-round">Next Round</button>
-              <a href="../index.html"><button id="quit-button">Quit</button></a>
-              <button id="final-results">Final Results</button>
+        </section>
 
-            </section>
-            <section id="computer-stats">
+        <section id="computer-stats">
 
-              <h3>Candie</h3>
-              <div id="computer-hand"></div>
-              <div id="computer-score"></div>
+          <h3>Candie</h3>
+          <div id="computer-hand"></div>
+          <div id="computer-score"></div>
 
-            </section>
-          </div>
-        </body>
+        </section>
+
+
       </div>
+
+            <!--  <a href="../index.html"><button id="quit-button">Quit</button></a>
+        <button id="final-results">Final Results</button>  -->
+    </div>
+    <button id="another-round">Next Round</button>
+
   </body>
 </html>
