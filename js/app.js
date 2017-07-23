@@ -1,18 +1,15 @@
 $(() => {
-
-  $('#lets-play').hide();
-  $('#results-div').hide();
-  $('#another-round').hide();
-  $('#final-results').hide();
-  $('#play-again').hide();
+  $("#lets-play").hide();
+  $("#results-div").hide();
+  $("#another-round").hide();
+  $("#final-results").hide();
+  $("#play-again").hide();
 
 //variables
 const rpsls = ["rock","paper","scissors","lizard","spock"]; //game choices
 let round = 1; //round number
 let computerScore = 0;
-// let finalComputerScore = computerScore;
 let playerScore = 0;
-// let finalPlayerScore = playerScore; //the final player score is the sum of the player scores.
 let computerHand;
 let playerHand; //the player's choice
 let computerWinsRound = false;
@@ -22,7 +19,7 @@ let playerWinsGame = false; //no one has won or lost yet
 let roundTie = false;
 let gameTie = false; //no one has a tie game yet
 
-
+//reset game requirement met
   const reset = () => {
     round = 1; //round number
     computerScore = 0;
@@ -33,56 +30,70 @@ let gameTie = false; //no one has a tie game yet
     playerWinsGame = false; //no one has won or lost yet
     roundTie = false;
     gameTie = false; //no one has a tie game yet
-    $('#lets-play').hide();
-    $('#results-div').hide();
-    $('#another-round').hide();
-    $('#final-results').hide();
+    $("#lets-play").hide();
+    $("#results-div").hide();
+    $("#another-round").hide();
+    $("#final-results").hide();
 
   }
 
-
-  $('#another-round').on('click', ()=>{
-  $('#container').show();
-  $('#lets-play').hide();
-  $('#another-round').hide();
-  $('#play-again').hide();
-
+$("#another-round").on('click', ()=>{
+  $("#container").show();
+  $("#lets-play").hide();
+  $("#another-round").hide();
+  $("#play-again").hide();
 });
 
-$('#final-results').on('click', () =>{
+$("#final-results").on('click', () =>{
     determineWhoWinsGame();
 });
-
-$('#play-again').on('click', ()=>{
-  $('#lets-play').hide();
-  $('#results-div').hide();
-  $('#another-round').hide();
-  $('#final-results').hide();
-  $('#play-again').hide();
-
-  reset();
+//option to play game again requirement met
+$("#play-again").on('click', ()=>{
+  resetGame();
 });
+//option not to continue requirement met.  Quit any time you want.
+$("#quit-button").on('click', ()=>{
+  resetGame();
+});
+
+const resetGame = ()=>{
+  window.location.reload(true);
+  reset();
+}
 
 //event listeners
 const playersChoose =
-$('.choice').on('click', (e) => {
+$(".choice").on('click', (e) => {
+  setTimeout(()=>{
+  alert("Candie the Computer is still thinking it over...");
+},500);
+
+//Rounds requirement met
   if(round < 4 ){
+    let computerHand =rpsls[Math.floor(rpsls.length * Math.random())];
     let playerHand = e.currentTarget.id;
-    let computerHand = rpsls[Math.floor(rpsls.length * Math.random())];
-    console.log("Round " + round + ":" + playerHand + ":" + computerHand);
+
+//setTimeout while computer "thinks" requirement met
+    setTimeout(()=>{
+      alert("Candie has made her choice. Let's see the results!");
       determineWhoWinsRound(playerHand, computerHand);
+      //round increase requirement met
       round++;
 
       if(round > 3 ){
-        $('#final-results').show();
-        $('#play-again').show();
-        $('#another-round').hide();
+        $("#final-results").show();
+        $("#play-again").show();
+        //continue requirement met
+        $("#another-round").hide();
       }
+
+    },2000);
+
     }
 });
 
 //https://stackoverflow.com/questions/4944387/go-to-link-on-button-click-jquery
-
+//stretch goal of adding more logic with more variables met
 const determineWhoWinsRound = (playerHand,computerHand) => {
   if (playerHand === computerHand) {
     gameTie = true;
@@ -129,109 +140,39 @@ const determineWhoWinsRound = (playerHand,computerHand) => {
   } else {
 
   }
-    $('#container').hide();
-    $('#play-the-game').hide();
-    $('#lets-play').show();
-    $('#another-round').show();
-
-    $('#round').html("<h1> Round " + round + "</h1>");
-    $('#player-hand').html("<img src='images/" + playerHand + ".png'>");
+    $("#container").hide();
+    $("#play-the-game").hide();
+    $("#lets-play").show();
+    $("#another-round").show();
+//visual representation of players' choices requirement met
+    $("#round-header").html("<h1> Round " + round + "</h1>");
+    $("#player-hand").html("<img src='images/" + playerHand + ".png'>");
     $("#player-score").html("<h2>" + playerScore + "</h2>");
     $("#computer-hand").html("<img src='images/" + computerHand + ".png'>");
     $("#computer-score").html("<h2>" + computerScore + "</h2>");
 
-    console.log( "Player Score: " + playerScore + " vs Computer Score: " + computerScore);
+    console.log( "Player Score: " + playerScore + " versus Computer Score: " + computerScore);
   };
 
-
-
-
-
 //
-// //game is done under the following conditions - keep
+// //game is done under the following conditions -
+//win lose or draw requirement met
 const determineWhoWinsGame = () => {
-  if (finalPlayerScore === finalComputerScore && finalPlayerScore != 0) {
+  if (playerScore === computerScore && playerScore != 0) {
     gameTie = true;
-    console.log("No Winner!  Game is tied.");
-  } else if (finalPlayerScore > finalComputerScore) {
+    $("#results-div").html("<h1>Game is tied!</h1>");
+  } else if (playerScore > computerScore) {
     playerWinsGame = true;
-    console.log("Player Wins " + playerScore + " to " + computerScore);
-  } else if (finalComputerScore > finalPlayerScore) {
+    $("#results-div").html("<h1>Player Wins!</h1>");
+  } else if (computerScore > playerScore) {
     computerWinsGame = true;
-    console.log("Computer Wins " + computerScore + " to " + playerScore );
+    $("#results-div").html("<h1>Computer Wins!</h1>");
   } else {
-    alert("Winner Results!");
+    alert("Winner Results!" + computerScore);
   }
-
-  $('#results-div').show();
+  $("#results-div").show();
 
 };
 
-
-
-// //=====================================
-// //final destinations - keep
-//
-
-// const exitToFinalDestination = () => {
-//   if (playerWinsGame = true){
-//   $("#final-results").on('click', (e) => {
-//     document.location.href = "http://tkotan.github.io/html/final-player-wins.html";
-// } else if (computerWinsGame = true){
-//   $("#final-results").on('click', (e) => {
-//     document.location.href = "http://tkotan.github.io/html/final-computer-wins.html";
-// } else if (gameTie = true){
-//   $("#final-results").on('click', (e) => {
-//     document.location.href = "http://tkotan.github.io/html/final-tie-game.html";
-// } else {
-//   $("#final-results").on('click', (e) => {
-//     document.location.href = "http://tkotan.github.io/index.html";
-//   )}
-//  )}
-//  )}
-//  )}
-//  }
-// }
-
-
-//grabbing the photo - for visual representation. These images will appear on the left side of the screen for the player, and on the right side for the computer.  That's why I have two different functions.
-// const playPlayerHand = () => {
-// if (playerHand === "rock"){
-//   $('#rock-img').show();
-//
-// } else if (playerHand === "paper"){
-//   $('#paper-img').show();
-//
-// } else if (playerHand === "scissors") {
-//   $('#scissors-img').show();
-//
-// } else if (playerHand === "lizard") {
-//   $('#lizard-img').show();
-//
-// } else if (playerHand === "spock") {
-//   $('#spock-img').show();
-// }
-// }
-//
-//
-// const playComputerHand = () => {
-// if (computerHand === "rock"){
-//   $('#rock-img').show();
-//
-// } else if (computerHand === "paper"){
-//   $('#paper-img').show();
-//
-// } else if (computerHand === "scissors") {
-//   $('#scissors-img').show();
-//
-// } else if (computerHand === "lizard") {
-//   $('#lizards-img').show();
-//
-// } else if (computerHand === "spock") {
-//   $('#spock-img').show();
-// }
-// }
-
-//logic for rounds
 
 });
