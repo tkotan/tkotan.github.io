@@ -1,4 +1,5 @@
 $(() => {
+  //game starts with "game board" hidden
   $("#lets-play").hide();
   $("#results-div").hide();
   $("#another-round").hide();
@@ -61,38 +62,34 @@ const resetGame = ()=>{
   reset();
 }
 
-//event listeners
+//the game
 const playersChoose =
-$(".choice").on('click', (e) => {
-  setTimeout(()=>{
-  alert("Candie the Computer is still thinking it over...");
-},500);
+  $(".choice").on('click', (e) => {
+    setTimeout(()=>{
+    alert("Candie the Computer is still thinking it over...");
+  },500);
 
 //Rounds requirement met
   if(round < 4 ){
-    let computerHand =rpsls[Math.floor(rpsls.length * Math.random())];
+    let computerHand = rpsls[Math.floor(rpsls.length * Math.random())];
     let playerHand = e.currentTarget.id;
-
-//setTimeout while computer "thinks" requirement met
+    //https://stackoverflow.com/questions/4944387/go-to-link-on-button-click-jquery
+    //setTimeout while computer "thinks" requirement met
     setTimeout(()=>{
       alert("Candie has made her choice. Let's see the results!");
       determineWhoWinsRound(playerHand, computerHand);
       //round increase requirement met
       round++;
-
       if(round > 3 ){
         $("#final-results").show();
         $("#play-again").show();
         //continue requirement met
         $("#another-round").hide();
       }
-
     },2000);
-
-    }
+   }
 });
 
-//https://stackoverflow.com/questions/4944387/go-to-link-on-button-click-jquery
 //stretch goal of adding more logic with more variables met
 const determineWhoWinsRound = (playerHand,computerHand) => {
   if (playerHand === computerHand) {
@@ -140,8 +137,9 @@ const determineWhoWinsRound = (playerHand,computerHand) => {
   } else {
 
   }
+
     $("#container").hide();
-    $("#play-the-game").hide();
+    $("#how-to-play").hide();
     $("#lets-play").show();
     $("#another-round").show();
 //visual representation of players' choices requirement met
@@ -151,7 +149,7 @@ const determineWhoWinsRound = (playerHand,computerHand) => {
     $("#computer-hand").html("<img src='images/" + computerHand + ".png'>");
     $("#computer-score").html("<h2>" + computerScore + "</h2>");
 
-    console.log( "Player Score: " + playerScore + " versus Computer Score: " + computerScore);
+    // console.log( "Player Score: " + playerScore + " versus Computer Score: " + computerScore);
   };
 
 //
@@ -163,10 +161,10 @@ const determineWhoWinsGame = () => {
     $("#results-div").html("<h1>Game is tied!</h1>");
   } else if (playerScore > computerScore) {
     playerWinsGame = true;
-    $("#results-div").html("<h1>Player Wins!</h1>");
+    $("#results-div").html("<h1>You Win!</h1>");
   } else if (computerScore > playerScore) {
     computerWinsGame = true;
-    $("#results-div").html("<h1>Computer Wins!</h1>");
+    $("#results-div").html("<h1>Candie Wins!</h1>");
   } else {
     alert("Winner Results!" + computerScore);
   }

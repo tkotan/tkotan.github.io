@@ -19,7 +19,7 @@ h1 {
 }
 
 #container {
-  max-width: 800px;
+  width: 800px;
   height: 500px;
   margin: 0 auto;
   padding-top: 50px;
@@ -38,7 +38,7 @@ h1 {
 
 }
 
-#play-the-game {
+#how-to-play {
   text-align: center;
   font-size: 24px;
 }
@@ -207,7 +207,7 @@ h3 {
   border-radius: 10px;
 }
 
-#final-player-wins {
+/*#final-player-wins {
   background: rgba(246, 239, 42, 0.9);
 }
 
@@ -217,14 +217,14 @@ h3 {
 
 #player-reaction > img {
   width: 250px;
-}
+}*/
 
 #play-again {
   font-size: 18px;
   border-radius: 10px;
 }
 
-#player-wins-game {
+/*#player-wins-game {
   font-size: 3em;
 }
 
@@ -250,4 +250,4 @@ h3 {
 #final-container > img{
   height:500px;
   width:500px;
-}
+}*/
