@@ -115,15 +115,15 @@ li {
   display: none;
 }
 
-#rules:hover > * {
+/*#rules:hover > * {
   display: block;
-}
+}*/
 
-#round-intro {
+/*#round-intro {
   background: white;
-}
+}*/
 
-#computer-choosing {
+/*#computer-choosing {
   background: lightpink;
   text-align: center;
 }
@@ -132,9 +132,9 @@ li {
   font-size: 5em;
   text-align: center;
   display: flex;
-}
+}*/
 
-#thinking-box {
+/*#thinking-box {
   height:300px;
   width:300px;
   padding-top: 60px;
@@ -146,12 +146,12 @@ li {
   height: 300px;
   width: 300px;
 
-}
+}*/
 
-#continue {
+/*#continue {
   font-size: 2em;
   visibility: hidden;
-}
+}*/
 
 
 section {
@@ -192,10 +192,10 @@ h3 {
   weight:150px;
 }
 
-#game-stats {
+/*#game-stats {
   display: block;
   text-align: center;
-}
+}*/
 
 #quit-button {
   font-size: 10px;

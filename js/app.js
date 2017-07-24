@@ -45,15 +45,19 @@ $("#another-round").on('click', ()=>{
   $("#play-again").hide();
 });
 
-$("#final-results").on('click', () =>{
+$("#rules").on('click', () => {
+  $("#rules").children().toggle();
+});
+
+$("#final-results").on('click', () => {
     determineWhoWinsGame();
 });
 //option to play game again requirement met
-$("#play-again").on('click', ()=>{
+$("#play-again").on('click', () => {
   resetGame();
 });
 //option not to continue requirement met.  Quit any time you want.
-$("#quit-button").on('click', ()=>{
+$("#quit-button").on('click', () => {
   resetGame();
 });
 
@@ -156,7 +160,7 @@ const determineWhoWinsRound = (playerHand,computerHand) => {
 // //game is done under the following conditions -
 //win lose or draw requirement met
 const determineWhoWinsGame = () => {
-  if (playerScore === computerScore && playerScore != 0) {
+  if (playerScore === computerScore && playerScore !== 0) {
     gameTie = true;
     $("#results-div").html("<h1>Game is tied!</h1>");
   } else if (playerScore > computerScore) {
