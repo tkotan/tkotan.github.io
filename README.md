@@ -4,18 +4,20 @@
 
 This is an enhanced version of the old childhood game of chance, Rock, Paper, Scissors.  The objective of the game is to defeat the other player's chosen variable.  
 
-Both players abide by the following rules:  
+Both players abide by the following rules:
 
-Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
+<ul>
+<li>Scissors cuts Paper</li>
+<li>Paper covers Rock</li>
+<li>Rock crushes Lizard</li>
+<li>Lizard poisons Spock</li>
+<li>Spock smashes Scissors</li>
+<li>Scissors decapitates Lizard</li>
+<li>Lizard eats Paper</li>
+<li>Paper disproves Spock</li>
+<li>Spock vaporizes Rock</li>
+<li>Rock crushes Scissors</li>
+</ul>
 
 Three rounds are played for a win, loss, or draw.
 
