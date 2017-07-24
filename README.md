@@ -24,7 +24,7 @@ Three rounds are played for a win, loss, or draw.
 
 <h3>Getting Started/Prerequisites</h3>
 
-In order to run this game, the player will need a browser that supports HTML5, CSS3, and JavaScript ES6
+In order to run this game, the player will need a browser that supports HTML5, CSS3, and JavaScript ES6.
 
 
 <h3>Author</h3>
