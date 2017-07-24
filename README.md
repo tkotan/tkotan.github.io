@@ -1,5 +1,8 @@
 <h1>RockPaperScissorsLizardSpock, V1.0.0</h1>
 
+<h3>Link to Live Site</h3>
+http://tkotan.github.io/#
+
 <h3>Description</h3>
 
 This is an enhanced version of the old childhood game of chance, Rock, Paper, Scissors.  The objective of the game is to defeat the other player's chosen variable.  
