@@ -21,22 +21,22 @@ let roundTie = false;
 let gameTie = false; //no one has a tie game yet
 
 //reset game requirement met
-  const reset = () => {
-    round = 1; //round number
-    computerScore = 0;
-    playerScore = 0;
-    computerWinsRound = false;
-    playerWinsRound = false;
-    computerWinsGame = false;
-    playerWinsGame = false; //no one has won or lost yet
-    roundTie = false;
-    gameTie = false; //no one has a tie game yet
-    $("#lets-play").hide();
-    $("#results-div").hide();
-    $("#another-round").hide();
-    $("#final-results").hide();
-
-  }
+  // const reset = () => {
+  //   round = 1; //round number
+  //   computerScore = 0;
+  //   playerScore = 0;
+  //   computerWinsRound = false;
+  //   playerWinsRound = false;
+  //   computerWinsGame = false;
+  //   playerWinsGame = false; //no one has won or lost yet
+  //   roundTie = false;
+  //   gameTie = false; //no one has a tie game yet
+  //   $("#lets-play").hide();
+  //   $("#results-div").hide();
+  //   $("#another-round").hide();
+  //   $("#final-results").hide();
+  //
+  // }
 
 $("#another-round").on('click', ()=>{
   $("#container").show();
@@ -63,7 +63,7 @@ $("#quit-button").on('click', () => {
 
 const resetGame = ()=>{
   window.location.reload(true);
-  reset();
+  // reset();
 }
 
 //the game
@@ -138,8 +138,6 @@ const determineWhoWinsRound = (playerHand,computerHand) => {
                         computerWinsRound = true;
                         computerScore++;
                       }
-  } else {
-
   }
 
     $("#container").hide();
