@@ -39,4 +39,4 @@ Tanya Kotan
 
 First off, I express my utmost respect and gratitude to the instructional team (especially Thom Page) at General Assembly.  They are a great group of educators.
 
-Many thanks to all of the kind people in the IT community who kindly and freely share their knowledge to those who love to learn.  I would also like to thank my family for being patient with me.  Lastly, I want to thank my children for teaching me how to be a kid again ;)
+Many thanks to all of the kind people in the IT community who kindly and freely share their knowledge with those who love to learn.  I would also like to thank my family for being patient with me.  Lastly, I want to thank my children for teaching me how to be a kid again ;)
